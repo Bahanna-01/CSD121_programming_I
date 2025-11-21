@@ -16,7 +16,7 @@ public class RandyPlayer extends Player {
 
     @Override
     public Position pickNextMove(Board board) {
-        List<Position> available = board.getAvailablePositions();
+        List<Position> available = board.getEmptyCells();
         return available.get(random.nextInt(available.size()));
     }
 }

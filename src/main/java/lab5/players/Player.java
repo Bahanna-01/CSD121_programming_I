@@ -1,15 +1,15 @@
-package tictactoe.players;
+package lab5.players;
 
-import tictactoe.game.Board;
-import tictactoe.game.Position;
-import tictactoe.ui.Console;
+import lab5.game.Board;
+import lab5.game.Position;
+import lab5.ui.Console;
 
 /**
  * Represents a player in the game.
  *
  * TODO: Make this an abstract class with various subclasses for different types of players
  */
-public class Player {
+public abstract class Player {
 
     private String name;
 
@@ -27,14 +27,5 @@ public class Player {
      * TODO: Make this an abstract method in an abstract class,
      *          and use this implementation in a HumanPlayer subclass
      */
-    public Position pickNextMove(Board currentBoard) {
-        while (true) {
-            var move = Console.promptForPosition(getName() + " pick your next move: ");
-            if (currentBoard.isEmptyAt(move)) {
-                return move;
-            } else {
-                Console.printAlert("That position is already taken.");
-            }
-        }
-    }
+    public abstract Position pickNextMove(Board currentBoard);
 }

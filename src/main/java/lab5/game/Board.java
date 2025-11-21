@@ -1,10 +1,10 @@
-package tictactoe.game;
+package lab5.game;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static tictactoe.game.PlayerToken.O;
-import static tictactoe.game.PlayerToken.X;
+import static lab5.game.PlayerToken.O;
+import static lab5.game.PlayerToken.X;
 
 /**
  * Represents a TicTacToe game board
@@ -92,16 +92,14 @@ public class Board {
      * @return The current status of the game board
      */
     public Status getStatus() {
-        switch (this.getWinner()) {
-            case X: return Status.XWins;
-            case O: return Status.OWins;
-            case null: {
-                if (this.isFull()) {
-                    return Status.Draw;
-                } else {
-                    return Status.InProgress;
-                }
-            }
+        PlayerToken winner = this.getWinner();
+
+        if (winner == PlayerToken.X) {
+            return Status.XWins;
+        } else if (winner == PlayerToken.O) {
+            return Status.OWins;
+        } else {
+            return this.isFull() ? Status.Draw : Status.InProgress;
         }
     }
 

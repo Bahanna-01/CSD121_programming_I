@@ -1,4 +1,4 @@
-package tictactoe.players;
+package lab5.players;
 
 import tictactoe.game.Board;
 import tictactoe.game.Position;

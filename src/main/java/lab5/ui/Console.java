@@ -1,4 +1,4 @@
-package tictactoe.ui;
+package lab5.ui;
 
 import com.diogonunes.jcolor.AnsiFormat;
 import tictactoe.game.*;

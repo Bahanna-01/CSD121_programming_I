@@ -1,4 +1,4 @@
-package tictactoe;
+package lab5;
 
 import tictactoe.game.TicTacToeGame;
 import tictactoe.ui.Console;

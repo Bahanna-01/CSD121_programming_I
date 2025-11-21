@@ -9,7 +9,7 @@ import tictactoe.ui.Console;
  *
  * TODO: Make this an abstract class with various subclasses for different types of players
  */
-public class Player {
+public abstract class Player {
 
     private String name;
 
@@ -27,14 +27,5 @@ public class Player {
      * TODO: Make this an abstract method in an abstract class,
      *          and use this implementation in a HumanPlayer subclass
      */
-    public Position pickNextMove(Board currentBoard) {
-        while (true) {
-            var move = Console.promptForPosition(getName() + " pick your next move: ");
-            if (currentBoard.isEmptyAt(move)) {
-                return move;
-            } else {
-                Console.printAlert("That position is already taken.");
-            }
-        }
-    }
+    public abstract Position pickNextMove(Board currentBoard);
 }
